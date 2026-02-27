@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.TallerController">
+    <padding>
+        <Insets top="12" right="12" bottom="12" left="12" />
+    </padding>
+
+    <top>
+        <Label text="Sistema de Taller de Bicicletas" style="-fx-font-size:18px; -fx-font-weight:bold;" />
+    </top>
+
+    <center>
+        <TabPane>
+            <tabs>
+                <Tab text="Clientes y Bicicletas" closable="false">
+                    <VBox spacing="12">
+                        <padding>
+                            <Insets top="10" right="10" bottom="10" left="10" />
+                        </padding>
+                        <HBox spacing="20">
+                            <VBox spacing="10">
+                                <Label text="Registrar Cliente" />
+                                <GridPane hgap="8" vgap="8">
+                                    <Label text="Nombre:" GridPane.rowIndex="0" />
+                                    <TextField fx:id="tfClienteNombre" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                                    <Label text="ID:" GridPane.rowIndex="1" />
+                                    <TextField fx:id="tfClienteId" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                                    <Label text="Telefono:" GridPane.rowIndex="2" />
+                                    <TextField fx:id="tfClienteTelefono" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                                    <Label text="Direccion:" GridPane.rowIndex="3" />
+                                    <TextField fx:id="tfClienteDireccion" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+                                </GridPane>
+                                <Button fx:id="btnRegistrarCliente" text="Registrar Cliente" />
+                            </VBox>
+
+                            <VBox spacing="10">
+                                <Label text="Registrar Bicicleta" />
+                                <GridPane hgap="8" vgap="8">
+                                    <Label text="ID Cliente:" GridPane.rowIndex="0" />
+                                    <TextField fx:id="tfBiciIdCliente" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                                    <Label text="Marca:" GridPane.rowIndex="1" />
+                                    <TextField fx:id="tfBiciMarca" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                                    <Label text="Tipo:" GridPane.rowIndex="2" />
+                                    <ComboBox fx:id="cbBiciTipo" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                                    <Label text="Color:" GridPane.rowIndex="3" />
+                                    <TextField fx:id="tfBiciColor" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+                                    <Label text="Serial:" GridPane.rowIndex="4" />
+                                    <TextField fx:id="tfBiciSerial" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+                                    <Label text="Anio:" GridPane.rowIndex="5" />
+                                    <TextField fx:id="tfBiciAnio" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+                                </GridPane>
+                                <Button fx:id="btnRegistrarBici" text="Registrar Bicicleta" />
+                            </VBox>
+                        </HBox>
+                        <Label text="Resumen Clientes/Bicicletas" />
+                        <TextArea fx:id="taClientes" editable="false" prefRowCount="20" />
+                    </VBox>
+                </Tab>
+
+                <Tab text="Mecanicos y Repuestos" closable="false">
+                    <VBox spacing="12">
+                        <padding>
+                            <Insets top="10" right="10" bottom="10" left="10" />
+                        </padding>
+                        <HBox spacing="20">
+                            <VBox spacing="10">
+                                <Label text="Registrar Mecanico" />
+                                <GridPane hgap="8" vgap="8">
+                                    <Label text="Nombre:" GridPane.rowIndex="0" />
+                                    <TextField fx:id="tfMecanicoNombre" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                                    <Label text="Especialidad:" GridPane.rowIndex="1" />
+                                    <ComboBox fx:id="cbMecanicoEspecialidad" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                                    <Label text="Certificacion:" GridPane.rowIndex="2" />
+                                    <TextField fx:id="tfMecanicoCertificacion" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                                </GridPane>
+                                <Button fx:id="btnRegistrarMecanico" text="Registrar Mecanico" />
+                            </VBox>
+
+                            <VBox spacing="10">
+                                <Label text="Registrar Repuesto" />
+                                <GridPane hgap="8" vgap="8">
+                                    <Label text="ID:" GridPane.rowIndex="0" />
+                                    <TextField fx:id="tfRepuestoId" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                                    <Label text="Nombre:" GridPane.rowIndex="1" />
+                                    <TextField fx:id="tfRepuestoNombre" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                                    <Label text="Cantidad:" GridPane.rowIndex="2" />
+                                    <TextField fx:id="tfRepuestoCantidad" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                                    <Label text="Stock minimo:" GridPane.rowIndex="3" />
+                                    <TextField fx:id="tfRepuestoStockMin" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+                                </GridPane>
+                                <Button fx:id="btnRegistrarRepuesto" text="Registrar Repuesto" />
+                            </VBox>
+                        </HBox>
+                        <Label text="Resumen Mecanicos/Repuestos" />
+                        <TextArea fx:id="taMecanicosRepuestos" editable="false" prefRowCount="12" />
+                        <Label text="Alertas de stock" />
+                        <TextArea fx:id="taAlertasStock" editable="false" prefRowCount="6" />
+                    </VBox>
+                </Tab>
+
+                <Tab text="Ordenes" closable="false">
+                    <VBox spacing="12">
+                        <padding>
+                            <Insets top="10" right="10" bottom="10" left="10" />
+                        </padding>
+                        <Label text="Crear Orden de Servicio" />
+                        <GridPane hgap="8" vgap="8">
+                            <Label text="Bicicleta:" GridPane.rowIndex="0" />
+                            <ComboBox fx:id="cbBicicletaOrden" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                            <Label text="Mecanico:" GridPane.rowIndex="1" />
+                            <ComboBox fx:id="cbMecanicoOrden" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                            <Label text="Repuesto:" GridPane.rowIndex="2" />
+                            <ComboBox fx:id="cbRepuestoOrden" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                            <Label text="Cantidad repuesto:" GridPane.rowIndex="3" />
+                            <TextField fx:id="tfOrdenRepuestoCantidad" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+                            <Label text="Motivo:" GridPane.rowIndex="4" />
+                            <TextField fx:id="tfOrdenMotivo" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+                            <Label text="Diagnostico:" GridPane.rowIndex="5" />
+                            <TextField fx:id="tfOrdenDiagnostico" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+                            <Label text="Trabajos:" GridPane.rowIndex="6" />
+                            <TextField fx:id="tfOrdenTrabajos" GridPane.rowIndex="6" GridPane.columnIndex="1" />
+                            <Label text="Costo:" GridPane.rowIndex="7" />
+                            <TextField fx:id="tfOrdenCosto" GridPane.rowIndex="7" GridPane.columnIndex="1" />
+                            <Label text="Fecha:" GridPane.rowIndex="8" />
+                            <DatePicker fx:id="dpOrdenFecha" GridPane.rowIndex="8" GridPane.columnIndex="1" />
+                            <Label text="Hora (HH:mm):" GridPane.rowIndex="9" />
+                            <TextField fx:id="tfOrdenHora" GridPane.rowIndex="9" GridPane.columnIndex="1" />
+                        </GridPane>
+                        <Button fx:id="btnCrearOrden" text="Crear Orden" />
+
+                        <Label text="Listado de Ordenes" />
+                        <TextArea fx:id="taOrdenes" editable="false" prefRowCount="12" />
+                    </VBox>
+                </Tab>
+
+                <Tab text="Consultas" closable="false">
+                    <VBox spacing="12">
+                        <padding>
+                            <Insets top="10" right="10" bottom="10" left="10" />
+                        </padding>
+                        <Label text="Historial de servicios por bicicleta" />
+                        <GridPane hgap="8" vgap="8">
+                            <Label text="Serial Bicicleta:" GridPane.rowIndex="0" />
+                            <TextField fx:id="tfConsultaSerial" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                            <Button fx:id="btnVerHistorial" text="Ver Historial" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                        </GridPane>
+                        <TextArea fx:id="taHistorial" editable="false" prefRowCount="9" />
+
+                        <Label text="Ordenes por fecha" />
+                        <GridPane hgap="8" vgap="8">
+                            <Label text="Fecha:" GridPane.rowIndex="0" />
+                            <DatePicker fx:id="dpConsultaFecha" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                            <Button fx:id="btnConsultarFecha" text="Consultar por Fecha" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                        </GridPane>
+                        <TextArea fx:id="taConsultaFecha" editable="false" prefRowCount="9" />
+                    </VBox>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>
