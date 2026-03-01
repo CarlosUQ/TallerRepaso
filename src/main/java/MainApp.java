@@ -9,9 +9,9 @@ import java.net.URL;
 public class MainApp extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        URL fxml = MainApp.class.getResource("/com/taller/view/TallerView.fxml");
+        URL fxml = MainApp.class.getResource("/TallerView.fxml");
         if (fxml == null) {
-            throw new IllegalStateException("No se encontro /com/taller/view/TallerView.fxml en resources");
+            throw new IllegalStateException("No se encontro TallerView.fxml en resources");
         }
         FXMLLoader loader = new FXMLLoader(fxml);
         Parent root = loader.load();

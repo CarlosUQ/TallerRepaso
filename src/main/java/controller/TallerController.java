@@ -1,8 +1,8 @@
 package controller;
 
-import com.taller.model.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import model.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
